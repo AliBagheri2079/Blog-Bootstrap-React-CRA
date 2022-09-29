@@ -3,6 +3,7 @@
 -Atomic design + feature first folder structure
 -git branching system
 -bundle size
+-yarn lint-staged command
 
 ## Getting Started with Create React App
 
