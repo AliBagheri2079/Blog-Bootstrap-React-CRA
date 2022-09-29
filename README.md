@@ -1,4 +1,10 @@
-# Getting Started with Create React App
+# titles
+
+-Atomic design + feature first folder structure
+-git branching system
+-bundle size
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
