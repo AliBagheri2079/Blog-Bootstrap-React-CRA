@@ -1,0 +1,82 @@
+@use "./variables" as *;
+
+// all root prefixes
+$prefixes: (
+  "color": "clr",
+  "breakpoint": "break",
+  "size": "size",
+);
+
+// color palette
+$theme-colors: (
+  "dark": (
+    hue: 0,
+    saturation: 0%,
+    lightness: 0%,
+  ),
+  "white": (
+    hue: 0,
+    saturation: 0%,
+    lightness: 100%,
+  ),
+  "gray": (
+    hue: 210,
+    saturation: 10%,
+    lightness: $colors-lightness,
+    alpha: $colors-alpha,
+  ),
+  "cyan": (
+    hue: 190,
+    saturation: 90%,
+    lightness: $colors-lightness,
+    alpha: $colors-alpha,
+  ),
+  "teal": (
+    hue: 160,
+    saturation: 70%,
+    lightness: $colors-lightness,
+    alpha: $colors-alpha,
+  ),
+  "yellow": (
+    hue: 45,
+    saturation: 100%,
+    lightness: $colors-lightness,
+    alpha: $colors-alpha,
+  ),
+  "orange": (
+    hue: 30,
+    saturation: 100%,
+    lightness: $colors-lightness,
+    alpha: $colors-alpha,
+  ),
+  "red": (
+    hue: 355,
+    saturation: 70%,
+    lightness: $colors-lightness,
+    alpha: $colors-alpha,
+  ),
+  "blue": (
+    hue: 215,
+    saturation: 100%,
+    lightness: $colors-lightness,
+    alpha: $colors-alpha,
+  ),
+);
+
+// group breakpoints
+$window-breakpoints: (
+  xs: $xs,
+  sm: $sm,
+  md: $md,
+  lg: $lg,
+  xl: $xl,
+  xxl: $xxl,
+);
+
+// sizes value
+$sizes: (
+  "initial": (
+    "base": $base-size,
+    "increase": $base-increase,
+  ),
+);

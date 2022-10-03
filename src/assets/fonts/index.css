@@ -1,0 +1,6 @@
+/* regular Oswald font face setting */
+@import "./Oswald/regular/stylesheet.css";
+
+body {
+  font-family: "Oswald", sans-serif;
+}

@@ -1,0 +1,44 @@
+@use "../utilities/maps" as *;
+
+// add prefixes shortcut
+$clr: map-get($prefixes, color);
+$brk: map-get($prefixes, breakpoint);
+$srz: map-get($prefixes, size);
+
+:root {
+  /// create color variables
+  /// @output for example:--clr-blue-3
+  @each $state, $property in $theme-colors {
+    $hue: map-get($property, hue);
+    $saturation: map-get($property, saturation);
+    $lightness: map-get($property, lightness);
+    $alpha: map-get($property, alpha);
+
+    @if $alpha {
+      @for $i from 1 through 9 {
+        --#{$clr}-#{$state}-#{$i}: hsl(
+          #{$hue} #{$saturation} #{$lightness * $i} / #{$alpha}
+        );
+      }
+    } @else {
+      --#{$clr}-#{$state}: hsl(#{$hue} #{$saturation} #{$lightness});
+    }
+  }
+
+  /// set custom breakpoints
+  /// @output for example:--brk-sm
+  @each $name, $br in $window-breakpoints {
+    --#{$brk}-#{$name}: #{$br};
+  }
+
+  /// handle size unit values
+  /// @output for example:--size-20
+  @each $unit, $size in $sizes {
+    $base: map-get($size, base);
+    $increase: map-get($size, increase);
+
+    @for $s from 1 through 100 {
+      --#{$srz}-#{$s}: #{$base * $increase * $s};
+    }
+  }
+}

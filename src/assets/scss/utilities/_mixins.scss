@@ -1,0 +1,20 @@
+/// @example
+/// * this example include every mixin in this file:
+/// :root, body[data-theme="dark"] {
+///    @include color-scheme(dark) {
+///      Insert dark mode styles here
+///    }
+/// }
+
+// change styles when color scheme changed
+@mixin color-scheme($name) {
+  @media (prefers-color-scheme: #{$name}) {
+    @content;
+  }
+}
+// change styles when window with changed
+@mixin media-query($value) {
+  @media (min-width: $value) {
+    @content;
+  }
+}
