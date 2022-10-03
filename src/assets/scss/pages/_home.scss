@@ -1,0 +1,66 @@
+@use "../utilities/mixins" as mix;
+@use "../utilities/placeholders";
+
+.header {
+  &-wrapper {
+    background-color: var(--clr-gray-9);
+  }
+
+  &--main-parts {
+    display: flex;
+    flex-flow: row wrap;
+    gap: var(--size-3);
+
+    > * {
+      --basic-value: 300px;
+      flex-basis: var(--basic-value);
+      flex-shrink: 1;
+
+      &:first-child {
+        flex-grow: 1;
+      }
+
+      &:last-child {
+        flex-grow: 5;
+      }
+    }
+  }
+
+  &__title {
+    @extend %rl-vertical-from-bottom, %grid-center;
+    min-height: 600px;
+  }
+
+  //   &__slider {  }
+}
+
+.titles {
+  &--container {
+    inline-size: 450px;
+    margin-inline: auto;
+  }
+
+  &__head {
+    margin: initial;
+    margin-block-end: 15px;
+    font-size: var(--size-18);
+    color: var(--clr-dark);
+    text-transform: capitalize;
+  }
+
+  &__description {
+    color: var(--clr-gray-3);
+    font-size: var(--size-4);
+    text-indent: 16px;
+  }
+}
+
+.sliders {
+  // &--container {}
+
+  &__item {
+    height: 100vh;
+    object-fit: cover;
+    @extend %video-ratio;
+  }
+}

@@ -1,28 +1,6 @@
-/* basic sass reset styles*/
+/* basic reset styles*/
 @use "./base";
 /* add normalize styles*/
 @use "./vendors/normalize";
-/* font styles setting*/
-@import "../fonts/index.css";
-
-.home-page {
-  display: grid;
-  grid-template-columns: calc(var(--size-20) + 25vw) 1fr;
-  gap: 0 var(--size-2);
-
-  &--children {
-    > * {
-      background: var(--clr-red-8);
-      height: calc(100vh - var(--size-8));
-    }
-  }
-
-  &__slider {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  &__header {
-  }
-}
+/* add all pages styles*/
+@use "./pages";
