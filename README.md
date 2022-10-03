@@ -4,6 +4,8 @@
 -git branching system
 -bundle size
 -yarn lint-staged command
+-npm run build
+--npm run analyze
 
 ## Getting Started with Create React App
 

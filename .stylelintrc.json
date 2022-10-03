@@ -5,7 +5,8 @@
   ],
   "rules": {
     "block-no-empty": null,
-    "unit-allowed-list": ["em", "rem", "vw", "vh", "px", "ch", "%", "s", "deg"],
+    "import-notation": null,
+    "font-family-name-quotes": null,
     "alpha-value-notation": ["percentage", { "exceptProperties": ["opacity"] }]
   }
 }
