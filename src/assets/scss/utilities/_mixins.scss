@@ -1,5 +1,5 @@
 /// @example
-/// * this example include every mixin in this file:
+/// * this example include every mixin have a @content:
 /// :root, body[data-theme="dark"] {
 ///    @include color-scheme(dark) {
 ///      Insert dark mode styles here
@@ -12,9 +12,121 @@
     @content;
   }
 }
-// change styles when window with changed
+// change styles when window width more than $value
 @mixin media-query($value) {
   @media (min-width: $value) {
     @content;
+  }
+}
+// change styles when window width fewer than $value
+@mixin media-query-max($value) {
+  @media (max-width: $value) {
+    @content;
+  }
+}
+
+/// @alias
+/// * we have two utility flex and grid mixin
+
+// create shorthand flexbox
+@mixin flex($flow: row wrap, $align: center, $justify: center) {
+  display: flex;
+  flex-flow: $flow;
+  align-items: $align;
+  justify-content: $justify;
+}
+// create shorthand grid
+@mixin grid($columnsTemp, $rowTemp, $areasTemp: unset, $autoFlow: row) {
+  display: grid;
+  grid-template-columns: $columnsTemp;
+  grid-template-rows: $rowTemp;
+  grid-template-areas: $areasTemp;
+  grid-auto-flow: $autoFlow;
+}
+
+/// @alias
+/// * animation utils
+
+// scale utils
+@mixin scale($duration, $timing-function, $delay, $fill-mode: forwards) {
+  scale: 0;
+  animation: scale $duration $timing-function $delay $fill-mode;
+}
+// scale keyframes
+@keyframes scale {
+  to {
+    scale: 1;
+  }
+}
+
+// transform by translate utils
+@mixin translate(
+  $direction,
+  $duration,
+  $timing-function,
+  $delay,
+  $iteration-count,
+  $fill-mode: forwards
+) {
+  animation-duration: $duration;
+  animation-timing-function: $timing-function;
+  animation-delay: $delay;
+  animation-iteration-count: $iteration-count;
+  animation-fill-mode: $fill-mode;
+
+  $translate: 150;
+  @if $direction == x {
+    transform: translateX($translate * -1%);
+    animation-name: translateX;
+  } @else if $direction == y {
+    transform: translateY($translate * -1%);
+    animation-name: translateY;
+  } @else if $direction == z {
+    transform: translateZ($translate * -1%);
+    animation-name: translateZ;
+  } @else {
+    @error "Unknown direction #{$direction}.";
+  }
+}
+// translate keyframes
+@keyframes translateX {
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes translateY {
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes translateZ {
+  to {
+    transform: translateZ(0);
+  }
+}
+
+// typing effect utils
+@mixin typing-effect($inline-size, $effect-duration, $blink-duration, $delay) {
+  display: inline-block;
+  inline-size: calc($inline-size * 1ch);
+  border-inline-end: 3px solid transparent;
+  white-space: nowrap;
+  overflow: hidden;
+
+  animation: effect $effect-duration steps($inline-size) $delay,
+    blink $blink-duration step-end infinite alternate;
+}
+// typing effect and blink keyframes
+@keyframes effect {
+  from {
+    inline-size: 0;
+  }
+}
+@keyframes blink {
+  0% {
+    border-inline-end: 3px solid;
+  }
+  50% {
+    border-color: transparent;
   }
 }
