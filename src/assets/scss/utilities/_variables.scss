@@ -13,3 +13,23 @@ $xxl: 1400px;
 // basic size value
 $base-size: 1rem;
 $base-increase: 0.25;
+
+// zindex value
+$zindex-top-header-layer: 1000;
+$zindex-dropdown: 1010;
+$zindex-sticky: 1020;
+$zindex-fixed: 1030;
+$zindex-modal-backdrop: 1040;
+$zindex-offcanvas: 1050;
+$zindex-modal: 1060;
+$zindex-popover: 1070;
+$zindex-tooltip: 1080;
+
+// animation delay values
+$first-delay: 0s;
+$second-delay: 0.5s;
+$third-delay: 1s;
+$forth-delay: 1.5s;
+$fifth-delay: 2s;
+$sixth-delay: 2.5s;
+$seventh-delay: 3s;
