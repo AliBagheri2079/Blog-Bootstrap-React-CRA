@@ -1,0 +1,158 @@
+@use "../utilities/variables" as var;
+@use "../utilities/mixins" as mix;
+@use "../utilities/placeholders";
+
+// local variables
+$basic-width-header-layer: 300px;
+$base-shrink-header-layer: 1;
+$base-grow-header-layer: 1;
+$navbar-height: 100px;
+$title-inline-size: 425px;
+$title-block-size: 200px;
+
+body {
+  background-color: var(--clr-white);
+  color: var(--clr-dark);
+
+  @include mix.color-scheme(dark) {
+    background-color: var(--clr-gray-1);
+    color: var(--clr-white);
+  }
+}
+
+// same font size for many classes
+.brand,
+.navbar__item,
+.image-controller,
+.user__name {
+  font-size: calc(var(--size-4) + 0.15rem);
+}
+
+// root header stylesheet
+.header {
+  @extend %full-height;
+  position: absolute;
+  inset: 0;
+
+  &-wrapper {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  &--bottom-layer {
+    @include mix.flex(row wrap-reverse, unset, unset);
+    gap: var(--size-1);
+
+    > * {
+      flex-basis: $basic-width-header-layer;
+      flex-shrink: $base-shrink-header-layer;
+    }
+  }
+
+  &__slider {
+    background-color: var(--clr-gray-7);
+  }
+
+  &--top-layer {
+    z-index: var.$zindex-top-header-layer;
+  }
+
+  &__items {
+    $columnsTemp: 1fr;
+    $rowTemp: $navbar-height 1fr 1fr;
+    $areasTemp: "navbar" "controller" "info";
+
+    @include mix.grid($columnsTemp, $rowTemp, $areasTemp);
+    @extend %container, %full-height;
+  }
+}
+// same flex grow for two component for responsize mode
+.header__slider,
+.information__item__container {
+  flex-grow: calc($base-grow-header-layer * 4);
+}
+// image slider stylesheet
+.sliders {
+  // &--container {}
+
+  &__item {
+    height: 100vh;
+    object-fit: cover;
+    @extend %video-ratio;
+  }
+}
+// information include titles, user info and arrow keys
+.information {
+  grid-area: info;
+  @extend %flex-between;
+
+  &__item {
+    flex: 100%;
+    margin-block-end: 1.5rem;
+
+    &:first-of-type {
+      @include mix.flex(row wrap, flex-end, space-between);
+    }
+
+    &:last-of-type {
+      @include mix.flex(row wrap-reverse, unset, unset);
+      gap: var(--size-1);
+
+      > * {
+        $basic-width-header-layer: 215px;
+        flex-basis: $basic-width-header-layer;
+        flex-shrink: $base-shrink-header-layer;
+      }
+    }
+
+    &__container {
+      @extend %flex-between;
+    }
+  }
+}
+// titles stylesheet
+.title {
+  @extend %rl-vertical-from-bottom;
+  max-inline-size: $title-inline-size;
+  block-size: $title-block-size;
+
+  &-wrapper {
+    display: none;
+
+    @include mix.media-query(var.$sm) {
+      display: initial;
+      margin-inline: 2vw;
+    }
+  }
+
+  &__head {
+    @include mix.typing-effect(7, 2s, 0.5s, var.$first-delay);
+    margin: initial;
+    margin-block-end: var(--size-4);
+    font-size: var(--size-15);
+    text-transform: capitalize;
+  }
+
+  &__description {
+    @include mix.scale(1s, linear, var.$third-delay, forwards);
+    color: var(--clr-gray-3);
+    font-size: var(--size-4);
+    text-indent: var(--size-4);
+    text-align: justify;
+  }
+}
+// user info and avatar stylesheet
+.user {
+  @extend %flex-between;
+
+  &__avatar {
+    display: initial;
+    width: var(--size-11);
+    margin-inline: var(--size-2);
+  }
+}
+// placeholder components styles
+.placeholder {
+  flex-grow: $base-grow-header-layer;
+}
