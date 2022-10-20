@@ -47,7 +47,7 @@ $image-controller-height: 250px;
     &__btn {
       background-color: transparent;
       border: unset;
-      cursor: pointer;
+      // cursor: pointer;
 
       .toggler-icon {
         width: var(--size-7);
@@ -74,7 +74,7 @@ $image-controller-height: 250px;
   }
 
   &__icon {
-    cursor: progress;
+    // cursor: progress;
 
     &:not(:first-child) {
       margin-inline-start: 1vw;
@@ -164,6 +164,6 @@ $image-controller-height: 250px;
     padding: var(--size-3);
     border-radius: 50%;
     margin-inline-start: var(--size-2);
-    cursor: pointer;
+    // cursor: pointer;
   }
 }

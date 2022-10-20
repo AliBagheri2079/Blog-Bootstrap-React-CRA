@@ -1,0 +1,25 @@
+@use "../utilities/variables" as var;
+
+// reset all elemets cursor
+body,
+body a,
+body button {
+  cursor: none;
+}
+
+.cursor {
+  // position cursor style
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  pointer-events: none;
+  z-index: var.$zindex-cursor;
+
+  // other cursor style
+  &--small {
+    width: var(--size-2);
+    aspect-ratio: 1;
+    clip-path: circle(50%);
+    background: var(--clr-gray-4);
+  }
+}
