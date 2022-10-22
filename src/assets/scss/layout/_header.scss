@@ -92,7 +92,11 @@ body {
     margin-block-end: 1.5rem;
 
     &:first-of-type {
-      @include mix.flex(row wrap, flex-end, space-between);
+      display: none;
+
+      @include mix.media-query(var.$sm) {
+        @include mix.flex(row wrap, flex-end, space-between);
+      }
     }
 
     &:last-of-type {
@@ -118,12 +122,7 @@ body {
   block-size: $title-block-size;
 
   &-wrapper {
-    display: none;
-
-    @include mix.media-query(var.$sm) {
-      display: initial;
-      margin-inline: 2vw;
-    }
+    margin-inline: 2vw;
   }
 
   &__head {

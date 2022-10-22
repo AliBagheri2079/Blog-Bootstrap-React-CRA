@@ -5,26 +5,26 @@ import Twitter from "assets/icons/twitter.svg";
 import Github from "assets/icons/github.svg";
 import StackOverflow from "assets/icons/stack-overflow.svg";
 
-const NavIcon = () => {
-  const navIconsList = [
-    {
-      id: Math.random() * (Math.random() + 0.3),
-      item: Twitter,
-    },
-    {
-      id: Math.random() * (Math.random() + 0.3),
-      item: LinkedIn,
-    },
-    {
-      id: Math.random() * (Math.random() + 0.3),
-      item: Github,
-    },
-    {
-      id: Math.random() * (Math.random() + 0.3),
-      item: StackOverflow,
-    },
-  ];
+const navIconsList = [
+  {
+    id: Math.random() * (Math.random() + 0.3),
+    item: Twitter,
+  },
+  {
+    id: Math.random() * (Math.random() + 0.3),
+    item: LinkedIn,
+  },
+  {
+    id: Math.random() * (Math.random() + 0.3),
+    item: Github,
+  },
+  {
+    id: Math.random() * (Math.random() + 0.3),
+    item: StackOverflow,
+  },
+];
 
+const NavIcon = () => {
   return (
     <>
       {navIconsList.map(({ id, item }) => (

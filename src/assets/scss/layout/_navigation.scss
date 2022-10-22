@@ -99,12 +99,13 @@ $image-controller-height: 250px;
 
     @include mix.media-query-max(var.$sm) {
       position: absolute;
-      inset: 0.5vh 0;
+      inset: calc(var(--size-4) * -1) 0;
       flex-flow: column nowrap;
-      width: 99vw;
+      width: 100vw;
       padding: var(--size-20) 0;
       background-color: var(--clr-gray-8);
-      border-top-right-radius: var(--size-50);
+      border-top-right-radius: var(--size-60);
+      display: none;
 
       @include mix.color-scheme(dark) {
         background-color: var(--clr-dark);
@@ -122,6 +123,9 @@ $image-controller-height: 250px;
 // image slider information styles
 .image-controller {
   grid-area: controller;
+  @include mix.media-query-max(var.$sm) {
+    display: none;
+  }
   @extend %flex-between;
 
   &__counter {
@@ -138,10 +142,6 @@ $image-controller-height: 250px;
   }
 
   &__cite {
-    @include mix.media-query-max(var.$sm) {
-      display: none;
-    }
-
     @extend %rl-vertical-from-bottom;
     height: $image-controller-height;
 

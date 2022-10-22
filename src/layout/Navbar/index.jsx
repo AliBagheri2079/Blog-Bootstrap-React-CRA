@@ -2,30 +2,34 @@ import NavBrand from "./NavBrand";
 import NavToggler from "./NavToggler";
 import NavItem from "./NavItem";
 import NavIcon from "./NavIcon";
+import React from "react";
+
+const navItemsList = [
+  {
+    id: Math.random() * (Math.random() / 0.5),
+    item: "home",
+    path: "/home",
+  },
+  {
+    id: Math.random() * (Math.random() / 0.5),
+    item: "about",
+    path: "/about",
+  },
+  {
+    id: Math.random() * (Math.random() / 0.5),
+    item: "blog",
+    path: "/blog",
+  },
+  {
+    id: Math.random() * (Math.random() / 0.5),
+    item: "contact",
+    path: "/contact",
+  },
+];
 
 const Navbar = () => {
-  const navItemsList = [
-    {
-      id: Math.random() * (Math.random() / 0.5),
-      item: "home",
-      path: "/home",
-    },
-    {
-      id: Math.random() * (Math.random() / 0.5),
-      item: "about",
-      path: "/about",
-    },
-    {
-      id: Math.random() * (Math.random() / 0.5),
-      item: "blog",
-      path: "/blog",
-    },
-    {
-      id: Math.random() * (Math.random() / 0.5),
-      item: "contact",
-      path: "/contact",
-    },
-  ];
+  const [showNavbar, setShowNavbar] = React.useState(false);
+  const handleNavbarToggle = () => setShowNavbar(!showNavbar);
 
   return (
     <nav className="navbar">
@@ -34,11 +38,14 @@ const Navbar = () => {
         <NavBrand />
       </div>
       {/* Navbar Toggler Icon */}
-      <div className="navbar__toggler">
+      <div className="navbar__toggler" onClick={handleNavbarToggle}>
         <NavToggler />
       </div>
       {/* Navbar Items */}
-      <menu className="nav-list--wrapper">
+      <menu
+        className="nav-list--wrapper"
+        style={{ display: showNavbar && "inherit" }}
+      >
         {navItemsList.map(({ id, item, path }) => (
           <NavItem id={id} item={item} path={path} />
         ))}
