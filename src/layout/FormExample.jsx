@@ -2,18 +2,22 @@ import React, { useState } from "react";
 import { Form, Row, Button } from "react-bootstrap";
 
 import CustomFormGroup from "../components/CustomFormGroup";
+import CustomToast from "../components/CustomToast";
 
 function FormExample() {
   const [validated, setValidated] = useState(false);
+  const [showToast, setShowToast] = useState(false);
 
   const handleSubmit = (event) => {
+    event.preventDefault();
     const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-      event.preventDefault();
+
+    if (form.checkValidity()) {
+      setValidated(true);
+      setShowToast(true);
+    } else {
       event.stopPropagation();
     }
-
-    setValidated(true);
   };
 
   return (
@@ -118,8 +122,10 @@ function FormExample() {
       </Form.Group>
 
       <Button variant="primary" type="submit">
-        Send
+        Submit
       </Button>
+
+      <CustomToast showToast={showToast} setShowToast={setShowToast} />
     </Form>
   );
 }

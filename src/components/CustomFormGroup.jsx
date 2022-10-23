@@ -29,7 +29,11 @@ const CustomFormGroup = ({
       xl={xl}
       controlId={formGroupId}
     >
-      <FloatingLabel controlId={formLabelId} label={formLabel} hasValidation>
+      <FloatingLabel
+        controlId={formLabelId}
+        label={formLabel}
+        hasvalidation="true"
+      >
         <Form.Control
           required
           type={formControlType}
