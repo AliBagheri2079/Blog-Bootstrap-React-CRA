@@ -1,12 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import CustomCursor from "utils/CustomCursor";
+import { JssProvider } from "react-jss";
+
 import App from "./containers/App";
+import CustomCursor from "utils/CustomCursor";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
-    <CustomCursor />
+    <JssProvider id={{ minify: true }}>
+      <App />
+      <CustomCursor />
+    </JssProvider>
   </React.StrictMode>
 );
