@@ -1,13 +1,7 @@
 import React from "react";
-import FocuslyMan from "assets/images/FocuslyMan.jpg";
-import PokerfaceMan from "assets/images/PokerfaceMan.jpg";
+import PropTypes from "prop-types";
 
-const Slider = () => {
-  const images = [
-    { id: 1, image: FocuslyMan },
-    { id: 2, image: PokerfaceMan },
-  ];
-
+const Slider = ({ images }) => {
   return (
     <section className="header__slider">
       <div className="sliders sliders--container">
@@ -23,6 +17,10 @@ const Slider = () => {
       </div>
     </section>
   );
+};
+
+Slider.propTypes = {
+  images: PropTypes.array,
 };
 
 export default Slider;

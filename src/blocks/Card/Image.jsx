@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -62,6 +63,13 @@ const Image = ({ id, image, category, header }) => {
       </div>
     </div>
   );
+};
+
+Image.propTypes = {
+  id: PropTypes.number,
+  image: PropTypes.elementType,
+  category: PropTypes.string,
+  header: PropTypes.string,
 };
 
 export default Image;

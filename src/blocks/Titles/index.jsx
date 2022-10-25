@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const Titles = ({ topHeader, description }) => {
   return (
     <header className="title-wrapper">
@@ -7,6 +9,11 @@ const Titles = ({ topHeader, description }) => {
       </div>
     </header>
   );
+};
+
+Titles.propTypes = {
+  topHeader: PropTypes.string,
+  describe: PropTypes.string,
 };
 
 export default Titles;

@@ -1,6 +1,6 @@
 import { useStyles, utilityStyles } from "assets/jss-style";
 
-const ContactInputs = ({ children, ...props }) => {
+const ContactInputs = ({ ...props }) => {
   const { myContactItem, myContactForm, myContactFormItem } = useStyles(props);
   const { centerFlex } = utilityStyles();
 

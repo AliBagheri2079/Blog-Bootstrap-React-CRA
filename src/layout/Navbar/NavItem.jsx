@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const NavItem = ({ id, item, path }) => {
   return (
@@ -10,6 +11,12 @@ const NavItem = ({ id, item, path }) => {
       </li>
     </React.Fragment>
   );
+};
+
+NavItem.propTypes = {
+  id: PropTypes.number,
+  item: PropTypes.string,
+  path: PropTypes.string,
 };
 
 export default NavItem;
