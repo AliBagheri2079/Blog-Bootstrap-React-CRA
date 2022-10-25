@@ -1,4 +1,4 @@
-# Demo
+# Demo React Blog
 
 <img src="./Screenshot.png" alt="React blog"/>
 
