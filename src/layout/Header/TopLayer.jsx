@@ -8,7 +8,7 @@ const HeaderTopLayer = () => {
       <div className="header__items">
         <Navbar />
 
-        <ImageController count="2" />
+        <ImageController />
 
         <Information />
       </div>

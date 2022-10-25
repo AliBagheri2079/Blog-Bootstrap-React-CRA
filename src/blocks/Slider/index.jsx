@@ -1,11 +1,25 @@
+import React from "react";
 import FocuslyMan from "assets/images/FocuslyMan.jpg";
 import PokerfaceMan from "assets/images/PokerfaceMan.jpg";
 
-const Slider = ({ image }) => {
+const Slider = () => {
+  const images = [
+    { id: 1, image: FocuslyMan },
+    { id: 2, image: PokerfaceMan },
+  ];
+
   return (
     <section className="header__slider">
       <div className="sliders sliders--container">
-        <img className="sliders__item" src={PokerfaceMan} alt={FocuslyMan} />
+        {images.map(({ id, image }) => (
+          <img
+            key={id}
+            src={image}
+            alt={image}
+            className="sliders__item"
+            transition-style="in:custom:circle-swoop"
+          />
+        ))}
       </div>
     </section>
   );

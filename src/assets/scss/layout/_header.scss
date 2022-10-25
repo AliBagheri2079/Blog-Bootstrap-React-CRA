@@ -74,12 +74,24 @@ body {
 }
 // image slider stylesheet
 .sliders {
-  // &--container {}
+  &--container {
+    position: relative;
+  }
 
   &__item {
     height: 100vh;
+    width: 100vw;
     object-fit: cover;
+    position: absolute;
     @extend %video-ratio;
+
+    &:first-child {
+      z-index: var.$zindex-image-header;
+    }
+
+    &--active {
+      z-index: var.$zindex-image-header + 1;
+    }
   }
 }
 // information include titles, user info and arrow keys

@@ -97,3 +97,17 @@
     linear-gradient(210deg, rgb(202, 202, 202), rgb(187, 187, 187));
   background-blend-mode: overlay, overlay, overlay, normal;
 }
+
+[transition-style="in:custom:circle-swoop"] {
+  --transition__duration: 4s;
+  animation-name: in-circle-swoop;
+}
+
+@keyframes in-circle-swoop {
+  from {
+    clip-path: var(--circle-top-right-out);
+  }
+  to {
+    clip-path: var(--circle-bottom-right-in);
+  }
+}

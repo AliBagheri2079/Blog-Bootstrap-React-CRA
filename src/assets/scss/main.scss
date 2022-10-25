@@ -1,6 +1,6 @@
 /* basic reset styles*/
 @use "./base";
-/* add normalize styles*/
-@use "./vendors/normalize";
+/* add vendors styles*/
+@use "./vendors";
 /* add all pages styles*/
 @use "./pages";

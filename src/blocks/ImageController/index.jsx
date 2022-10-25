@@ -1,12 +1,13 @@
+import React from "react";
 import ChevronBarRight from "assets/icons/chevron-bar-right.svg";
 
-const ImageController = ({ count }) => {
+const ImageController = () => {
   return (
     <div className="image-controller">
       {/* Image Slider Counter */}
       <div className="image-controller__counter">
         <img className="" src={ChevronBarRight} alt="Counter SVG Logo" />
-        <span>{count}</span>
+        <span> </span>
       </div>
       {/* Image Slider Caption */}
       <div className="image-controller__cite">
