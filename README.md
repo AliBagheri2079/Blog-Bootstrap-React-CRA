@@ -16,6 +16,10 @@
 10. add custom cursor component
 11. create many components with `react bootstrap` on other branch
 
+## Project Plans
+
+ - [See in Notion](https://ruddy-tellurium-2b3.notion.site/5849a6386d404e54851dc9a63a4bed36?v=2f9e29a559284e4d914c045233ec9987)
+
 ## Analyze
 
 To analyze this project run
