@@ -1,11 +1,28 @@
-# titles
+# Demo
 
--Atomic design + feature first folder structure
--git branching system
--bundle size
--yarn lint-staged command
--npm run build
---npm run analyze
+<img src="./Screenshot.png" alt="React blog"/>
+
+## Features
+
+1. Folder structure based on `Atomic design and Feature first`
+2. github branching system (`github flow`)
+3. add `husky`, `lint-staged` for precommit
+4. design system with `sass`
+5. linting style with `stylelint`
+6. use `gsap` for scroll animation
+7. create one component style with `jss`
+8. absolute path import
+9. use `prop-type` for checking component props
+10. add custom cursor component
+11. create many components with `react bootstrap` on other branch
+
+## Analyze
+
+To analyze this project run
+
+```bash
+    yarn run analyze
+```
 
 ## Getting Started with Create React App
 
@@ -77,3 +94,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Authors
+
+- [@AliBagheri2079](https://www.github.com/alibagheri2079)
