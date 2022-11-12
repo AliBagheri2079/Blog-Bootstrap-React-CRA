@@ -1,6 +1,6 @@
 # Demo React Blog
 
-<img src="./Screenshot.png" alt="React blog"/>
+<img src="./Screenshot.png" alt="React blog screenshot"/>
 
 ## Features
 
