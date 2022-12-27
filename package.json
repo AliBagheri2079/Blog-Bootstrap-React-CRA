@@ -1,5 +1,6 @@
 {
-  "name": "blog-bootstrap-react-cra",
+  "homepage": "https://github.com/AliBagheri2079/reactjs-blog.github.io",
+  "name": "reactjs-blog",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -7,6 +8,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "analyze": "source-map-explorer 'build/static/js/*.js'",
     "prepare": "husky install"
   },
@@ -63,6 +66,7 @@
     "web-vitals": "^2.1.0"
   },
   "devDependencies": {
+    "gh-pages": "^4.0.0",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
