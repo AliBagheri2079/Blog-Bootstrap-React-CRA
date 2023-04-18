@@ -1,4 +1,4 @@
-# [Demo React Blog](https://alibagheri2079.github.io/ReactJS-Blog/)
+# Demo React Blog
 
 <img src="./Screenshot.png" alt="React blog screenshot"/>
 
